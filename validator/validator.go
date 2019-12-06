@@ -164,3 +164,11 @@ func defaultErrorFactory(failPath, msg string) error {
 		Msg:      msg,
 	}
 }
+
+func (v *Validator) ValidateStruct(obj interface{}) error {
+	return v.Validate(obj)
+}
+
+func (v *Validator) Engine() interface{} {
+	return v
+}
